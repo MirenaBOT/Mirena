@@ -116,3 +116,133 @@ The bot has differents types of commands, including:
 ---
 
 ## Installation
+
+0. Prerequisites
+    * Any file editor (except Word-like, notepad is fine)
+    * And SQLite software.
+    * NPM
+
+1. Clone this repo.
+    You can either download it as an archive or clone it via command line.
+    ```bash
+    git clone https://github.com/MirenaBOT/Mirena.git
+    ```
+
+2. Install the dependencies.
+
+    1. Make sure you have [npm](https://www.npmjs.com/) installed.
+    2. Install the dependencies by running in the code's folder
+    ```bash
+    npm i --save
+    ```
+
+3. Add your token.
+    1. Create a file in the folder's root named `token.js`
+    2. The content of your file must be like the following:
+    ```javascript
+    module.exports.token = "your token goes here"
+    ```
+    3. Put your token between the two quotation marks.
+
+4. Add the database.
+    1. Create a new `SQLite3` database named `Mirena.sqlite3`. (You can give it another name but don't forget to change the name in the `index.js` file, line 11)
+    2. Run those commands to create the needed tables.
+    ```SQL
+    CREATE TABLE `Bans` (
+        `ServerID`	TEXT NOT NULL,
+        `UserID`	TEXT NOT NULL,
+        `Date`	INTEGER NOT NULL,
+        `Reason`	TEXT,
+        `AuthorID`	TEXT NOT NULL,
+        `Duration`	INTEGER NOT NULL,
+        PRIMARY KEY(`ServerID`,`UserID`,`Date`)
+    );
+
+    CREATE TABLE `Kicks` (
+        `ServerID`	TEXT NOT NULL,
+        `UserID`	TEXT NOT NULL,
+        `Date`	INTEGER NOT NULL,
+        `Reason`	TEXT,
+        `AuthorID`	TEXT NOT NULL,
+        PRIMARY KEY(`ServerID`,`UserID`,`Date`)
+    );
+
+    CREATE TABLE `Levels` (
+        `ServerID`	TEXT NOT NULL,
+        `UserID`	TEXT NOT NULL,
+        `Experience`	INTEGER NOT NULL,
+        PRIMARY KEY(`ServerID`,`UserID`)
+    );
+
+    CREATE TABLE `Mutes` (
+        `ServerID`	TEXT NOT NULL,
+        `UserID`	TEXT NOT NULL,
+        `Date`	INTEGER NOT NULL,
+        `Reason`	TEXT,
+        `AuthorID`	TEXT NOT NULL,
+        `Duration`	INTEGER NOT NULL,
+        PRIMARY KEY(`ServerID`,`UserID`,`Date`)
+    );
+
+    CREATE TABLE `Tokens` (
+        `ServerID`	TEXT NOT NULL,
+        `UserID`	TEXT NOT NULL,
+        `Token`	INTEGER NOT NULL,
+        `IsAdmin`	TEXT NOT NULL,
+        PRIMARY KEY(`ServerID`,`UserID`)
+    );
+
+    CREATE TABLE `Warns` (
+        `ServerID`	TEXT NOT NULL,
+        `UserID`	TEXT NOT NULL,
+        `Date`	INTEGER NOT NULL,
+        `Reason`	TEXT,
+        `AuthorID`	TEXT NOT NULL,
+        PRIMARY KEY(`ServerID`,`UserID`,`Date`)
+    );
+
+    CREATE TABLE `General` (
+        `ServerID`	TEXT NOT NULL,
+        `Image`	TEXT,
+        `Currency`	TEXT,
+        PRIMARY KEY(`ServerID`)
+    );
+    ```
+
+## Run the bot
+0. Prerequisites
+    * Any file editor (except Word-like, notepad is fine)
+    * And SQLite software.
+    * NPM
+    * NodeJs
+
+    1. Make sure you have [NodeJs](https://nodejs.org) installed. This bot has been designed for Node (Carbon) `8.9.4` but also run in newer versions (tested with `8.12.0`). You may encounter some issues if you are using an unstable version, older version, newer version. Run the command
+    ```bash
+    node -v
+    ```
+    to check the version of your installed NodeJs software.
+
+2. Run the bot. Type
+    ```bash
+    node .
+    ```
+    or
+    ```bash
+    node index.js
+    ```
+
+## Authors
+* Project Managers:
+    * Katerina
+    * Almytie
+* Programmers
+    * Kévin
+    * Ascor8522
+    * Draco1544
+* Graphic designer
+    * Siren
+
+
+## License
+To learn more about the license we are using, reffer to the FAQ section (Question: May I use this code for my own bot? What's the license used for this bot?)
+Full license details in the `LICENSE` file
