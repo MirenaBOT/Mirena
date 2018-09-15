@@ -4,6 +4,8 @@ This is the master branch for Mirena, if you are looking for an older version of
 
 Mirena is a multi-purposes Discord Bot.
 
+[![GitHub issues](https://img.shields.io/github/issues/MirenaBOT/Mirena.svg)](https://github.com/MirenaBOT/Mirena/issues)[![GitHub forks](https://img.shields.io/github/forks/MirenaBOT/Mirena.svg)](https://github.com/MirenaBOT/Mirena/network)[![GitHub stars](https://img.shields.io/github/stars/MirenaBOT/Mirena.svg)](https://github.com/MirenaBOT/Mirena/stargazers)[![GitHub license](https://img.shields.io/github/license/MirenaBOT/Mirena.svg)](https://github.com/MirenaBOT/Mirena/blob/master/LICENSE)![Bot Version](https://img.shields.io/badge/version-3.0-yellow.svg)
+
 ## Types of commands
 
 The bot has differents types of commands, including:
